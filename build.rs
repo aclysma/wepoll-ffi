@@ -1,4 +1,3 @@
-
 fn main() {
     let mut build = cc::Build::new();
     build.file("vendor/wepoll/wepoll.c");

@@ -4,6 +4,24 @@ Bindings for wepoll (epoll on windows)
 
 This crate provides unsafe bindings. Please refer to https://github.com/piscisaureus/wepoll for more details.
 
+The version of wepoll included is currently 1.58 with an optional patch. (use the 
+`null-overlapped-wakeups-patch` crate feature to enable it, see below for more details.)
+
+## Feature Flags
+
+### null-overlapped-wakeups-patch
+
+In the `polling` crate, in order to implement notify(), PostQueuedCompletionStatus is called with a null
+lpOverlapped parameter. This will result in GetQueuedCompletionStatusEx providing an event that also
+has a null lpOverlapped parameter. Unmodified wepoll will crash, as it assumes lpOverlapped is not null.
+
+This feature will instead treat this as an indication to break out of a wait early. The change is based on the 
+following:
+- https://github.com/piscisaureus/wepoll/pull/20
+- https://github.com/piscisaureus/wepoll/pull/20#issuecomment-677646507
+
+[Patch diff here](https://github.com/aclysma/wepoll/commit/3cf5cf446b9b30bd98803cbdc7c7ab8a791789c9)
+
 ## License
 
 The bindings are licensed under either of

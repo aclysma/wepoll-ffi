@@ -1,6 +1,6 @@
 [package]
 name = "wepoll-ffi"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Philip Degarmo <aclysma@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0 OR BSD-2-Clause"
@@ -17,6 +17,6 @@ targets = ["x86_64-pc-windows-msvc"]
 [build-dependencies]
 cc = "1.0"
 
+# See readme for info on feature flags
 [features]
-# If true, include a patch to support wakup events as described in https://github.com/piscisaureus/wepoll/pull/20
 null-overlapped-wakeups-patch = []
