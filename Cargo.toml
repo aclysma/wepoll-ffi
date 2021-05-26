@@ -1,15 +1,15 @@
 [package]
-name = "wepoll-rs"
+name = "wepoll-ffi"
 version = "0.1.0"
 authors = ["Philip Degarmo <aclysma@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0 OR BSD-2-Clause"
 readme = "../README.md"
-repository = "https://github.com/aclysma/wepoll-rs"
-homepage = "https://github.com/aclysma/wepoll-rs"
+repository = "https://github.com/aclysma/wepoll-ffi"
+homepage = "https://github.com/aclysma/wepoll-ffi"
 description = "Bindings for the wepoll library"
-keywords = ["async", "net", "wepoll"]
-categories = ["game-development", "graphics", "external-ffi-bindings", "compression", "encoding"]
+keywords = ["wepoll"]
+categories = ["external-ffi-bindings"]
 
 [package.metadata.docs.rs]
 targets = ["x86_64-pc-windows-msvc"]
